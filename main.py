@@ -13,19 +13,52 @@ class Bot():
     def run_to_point(self):
         if not self.check_window():
             return False
-        Win32Helpers.pressAndHold("spacebar", "w")
-        time.sleep(2.5)
-        Win32Helpers.release("spacebar", "w")
+        Win32Helpers.pressAndHold("spacebar", "d")
+        time.sleep(1.85)
+        Win32Helpers.release("spacebar", "d")
         time.sleep(0.5)
-        Win32Helpers.pressAndHold("spacebar", "a")
+        Win32Helpers.pressAndHold("w")
+        time.sleep(0.2)
+        Win32Helpers.release("w")
         time.sleep(0.5)
-        Win32Helpers.release("spacebar", "a")
+        Win32Helpers.pressAndHold("w")
         time.sleep(0.5)
-        Win32Helpers.pressAndHold("spacebar", "w")
-        time.sleep(0.7)
-        Win32Helpers.release("spacebar", "w")
+        # time.sleep(1)
+        Win32Helpers.press("r")
+        time.sleep(0.4)
+        Win32Helpers.pressAndHold("spacebar")
+        # time.sleep(0.5)r adff
+        # Win32Helpers.release("e")
+        time.sleep(6.5)
+        Win32Helpers.pressAndHold("a")
+        time.sleep(0.2)
+        Win32Helpers.release("a")
+        time.sleep(3)
+        Win32Helpers.pressAndHold("d")
+        time.sleep(2)
+        Win32Helpers.press("f")
+        # Win32Helpers.release("w")
+        time.sleep(2)
+        Win32Helpers.release("spacebar", "d", "w")
         time.sleep(0.5)
         return True
+
+    # def run_to_point(self):
+    #     if not self.check_window():
+    #         return False
+    #     Win32Helpers.pressAndHold("spacebar", "w")
+    #     time.sleep(2.5)
+    #     Win32Helpers.release("spacebar", "w")
+    #     time.sleep(0.5)
+    #     Win32Helpers.pressAndHold("spacebar", "a")
+    #     time.sleep(0.5)
+    #     Win32Helpers.release("spacebar", "a")
+    #     time.sleep(0.5)
+    #     Win32Helpers.pressAndHold("spacebar", "w")
+    #     time.sleep(0.7)
+    #     Win32Helpers.release("spacebar", "w")
+    #     time.sleep(0.5)
+    #     return True
 
     def run_up_further(self):
         if not self.check_window():
@@ -62,7 +95,7 @@ class Bot():
     def do_routine(self):
         if not self.teleport_back(): return False
         if not self.run_to_point(): return False
-        if not self.use_ability(): return False
+        # if not self.use_ability(): return False
         # Doesn't seem to be worth it
         # if not self.run_up_further(): return False
         # if not self.use_ability(): return False
@@ -81,7 +114,7 @@ class Bot():
             i += 1
             print("Starting iteration " + str(i))
             if not self.do_routine(): break
-            time.sleep(8)
+            time.sleep(5)
         print("Stopped session because we're no longer in the right window")
         return
 
